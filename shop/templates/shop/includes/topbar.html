@@ -10,16 +10,20 @@
 
 <!-- MAIN HEADER -->
 <div class="main-header">
-  <div class="header-left">
-    <a href="{% url 'shop:product_list' %}" class="logo">
-      MyShop
-    </a>
+  
+  <button class="mobile-menu-btn" onclick="toggleSidenav()">
+    <i class="bi bi-list"></i>
+  </button>
+  
+  <a href="{% url 'shop:product_list' %}" class="logo">
+    MyShop
+  </a>
 
-    <a href="{% url 'shop:catalog' %}" class="catalog-btn">
-      Каталог
-    </a>
-  </div>
+  <a href="{% url 'shop:catalog' %}" class="catalog-btn">
+    Каталог
+  </a>
 
+  
   <form class="header-search"
         method="get"
         action="{% if category %}
@@ -36,17 +40,20 @@
       <button type="submit">
           <i class="bi bi-search"></i>
       </button>
+      
   </form>
+  
 
-  <div class="header-right">
-    <a href="{% url 'cart:cart_detail' %}" class="header-icon">
-      <span class="icon">🛒</span>
+  <a href="{% url 'cart:cart_detail' %}" class="header-icon">
+    <span class="icon">🛒</span>
 
-      {% if cart %}
-      <span class="cart-count">{{ cart|length }}</span>
-      {% endif %}
-      <span>Заказ</span>
-    </a>
+    {% if cart %}
+    <span class="cart-count">{{ cart|length }}</span>
+    {% endif %}
+    <span>Заказ</span>
+  </a>
+   
 
-  </div>
+  
+  
 </div>
